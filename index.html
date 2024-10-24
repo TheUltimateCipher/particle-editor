@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Particle Editor</h1>
+        
+        <!-- Particle Settings Form -->
+        <div>
+            <label for="particleNumber">Number of Particles:</label>
+            <input type="number" id="particleNumber" min="1" value="100"><br>
+
+            <label for="particleSpeed">Particle Speed:</label>
+            <input type="number" id="particleSpeed" min="1" value="2"><br>
+
+            <label for="particleSize">Particle Size:</label>
+            <input type="number" id="particleSize" min="1" value="13"><br>
+
+            <label for="particleColor">Particle Color:</label>
+            <input type="color" id="particleColor" value="#ffffff"><br>
+
+            <label for="particleShape">Particle Shape:</label>
+            <select id="particleShape">
+                <option value="circle">Circle</option>
+                <option value="image">Custom Image</option>
+            </select><br>
+
+            <label for="particleImage" style="display:none;" id="imageUploadLabel">Upload Particle Image:</label>
+            <input type="file" id="particleImage" accept="image/*" style="display:none;"><br>
+
+            <label for="particleOpacityMin">Min Opacity:</label>
+            <input type="number" id="particleOpacityMin" min="0" max="1" step="0.1" value="0.6"><br>
+
+            <label for="particleOpacityMax">Max Opacity:</label>
+            <input type="number" id="particleOpacityMax" min="0" max="1" step="0.1" value="1"><br>
+
+            <label for="opacitySpeed">Opacity Change Speed:</label>
+            <input type="number" id="opacitySpeed" min="0.1" step="0.1" value="1"><br>
+
+            <label for="movementType">Movement Type:</label>
+            <select id="movementType">
+                <option value="bounce">Bounce</option>
+                <option value="straight">Straight</option>
+            </select><br>
+
+            <label for="movementDirection">Movement Direction:</label>
+            <select id="movementDirection">
+                <option value="none">None</option>
+                <option value="top">Up</option>
+                <option value="bottom">Down</option>
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </select><br>
+
+            <label for="lineToggle">Toggle Lines:</label>
+            <input type="checkbox" id="lineToggle" checked><br>
+
+            <label for="interactionToggle">Toggle Interaction:</label>
+            <input type="checkbox" id="interactionToggle" checked><br>
+
+            <button id="exportBtn">Export Config</button>
+        </div>
+
+        <!-- Particle Preview -->
+        <div id="particlePreview" style="width: 100%; height: 400px; background-color: #000;"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
